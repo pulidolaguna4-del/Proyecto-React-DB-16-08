@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Clientes from './components/Clientes'
 import Productos from './components/Productos'
 import Ventas from './components/Ventas'
-import Menu from './components/menu'
+import Menu from './components/Menu'
 
 function App() {
     return (
