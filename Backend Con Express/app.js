@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
+const db = require('./config/db');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -12,6 +13,10 @@ var routeProductos = require('./routes/productos');
 var routeVentas = require('./routes/ventas');
 
 var app = express();
+
+db.query('SELECT 1')
+  .then(() => console.log('Conexión a MySQL establecida'))
+  .catch(err => console.error('Error al conectar con MySQL:', err.message));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
