@@ -115,18 +115,17 @@ function Clientes() {
                 <th>Acciones</th>
               </tr>
             </thead>
-
             <tbody>
-              {clientes.map(c => (
-                <tr key={c.id_cliente}>
-                  <td>{c.id_cliente}</td>
-                  <td>{c.nomCliente}</td>
-                  <td>{c.contacto}</td>
-                  <td>{c.departamento}</td>
-                  <td>{c.ciudad}</td>
+              {clientes.map(cliente => (
+                <tr key={cliente.id_cliente}>
+                  <td>{cliente.id_cliente}</td>
+                  <td>{cliente.nomCliente}</td>
+                  <td>{cliente.contacto}</td>
+                  <td>{cliente.departamento}</td>
+                  <td>{cliente.ciudad}</td>
                   <td className="clientes-actions">
-                    <button className="button-edit" type="button" onClick={() => editarCliente(c)}>Editar</button>
-                    <button className="button-delete" type="button" onClick={() => eliminarCliente(c.id_cliente)}>Eliminar</button>
+                    <button className="button-edit" type="button" onClick={() => editarCliente(cliente)}>Editar</button>
+                    <button className="button-delete" type="button" onClick={() => eliminarCliente(cliente.id_cliente)}>Eliminar</button>
                   </td>
                 </tr>
               ))}
